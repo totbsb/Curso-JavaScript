@@ -1,4 +1,4 @@
-/* CÓDIGO NÃO EXECUTÁVEL!!!
+﻿/* CÓDIGO NÃO EXECUTÁVEL!!!
 
 // Paradigma Procedural
 //Antes eram funções que tinham dados
@@ -24,5 +24,5 @@ implementação da função (encapsulada) e da interface que comunica os objetos
 3 - Herança -> Receber atributos e métodos de uma classe pai. No JavaScript só existe um pai para cada componente filho.
 Composição representa uma relação "tem um". Exemplo: "Carro tem um motor".
 Na Herança existe a relação "é um". Exemplo: "Gol é um carro".
-4 - Polimorfismo -> Os objetos podem assumir diferentes formas, podendo ser interpretado como o objeto pai, por exemplo
+4 - Polimorfismo -> Os objetos podem assumir diferentes formas, podendo ser interpretado como o objeto pai, por exemplo 
 */
