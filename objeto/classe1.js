@@ -9,7 +9,7 @@ class CicloFinanceiro {
     constructor(mes,ano) {
         this.mes = mes
         this.ano = ano
-        this.lancamentos = [] //cria um array de lançamentos
+        this.lancamentos = [] //cria um array de lançamentos 
     }
 
     addLancamentos(...lancamentos) { //recebe um ou  vários lançamentos e cria o array 'lancamentos'
