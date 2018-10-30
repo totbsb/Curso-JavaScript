@@ -15,6 +15,6 @@ delete pessoa.nome //Sem efeito
 
 console.log(pessoa)
 
-//Criação de um objeto constante 
+//Criação de um objeto constante  
 const pessoaConstante = Object.freeze({nome: 'João'})
 console.log(pessoaConstante)
