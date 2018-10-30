@@ -10,6 +10,6 @@ console.log(moduloB.bomDia)
 //chamando a função de outro módulo
 console.log(moduloB.boaNoite())
 
-//Demonstrando o objeto passado pelos módulos
+//Demonstrando o objeto passado pelos módulos 
 console.log(moduloB)
 console.log(moduloA)
