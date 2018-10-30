@@ -20,6 +20,7 @@ const getTurma = (letra,callback) => {
 
 let nomes = []
 
+//callback hell
 getTurma('A', alunos => {
     nomes = nomes.concat(alunos.map(a => `A: ${a.nome}`))
         //console.log(nomes)
