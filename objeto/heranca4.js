@@ -53,7 +53,7 @@ console.log(Object.prototype.__proto__  === Function.prototype.__proto__.__proto
 console.log('-------------------------')
 console.log(typeof Function.prototype.prototype) //a função prototype da função prototype não é definida. É um objeto, na verdade
 console.log(typeof Function.prototype.__proto__) //Comprovação da assertiva anterior
-console.log(typeof Function.__proto__) // É uma função
+console.log(typeof Function.__proto__) // É uma função 
 console.log(typeof Function.__proto__.__proto__) // O protótipo dessa função anterior é um objeto
 console.log(typeof MeuObjeto.prototype) //O protótipo da minha função é um objeto
 console.log(typeof MeuObjeto.__proto__) //Mas o atributo __proto__ é uma função
