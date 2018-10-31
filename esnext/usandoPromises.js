@@ -5,6 +5,7 @@ const http = require('http')
 
 const getTurma = letra => {
     const url = `http://files.cod3r.com.br/curso-js/turma${letra}.json`
+    //Retorna uma Promise que executa o resolve (Dando certo) ou reject (Dando errado)
     return new Promise((resolve, reject) => {
         http.get(url, res => {
             let resultado = ''
@@ -15,9 +16,9 @@ const getTurma = letra => {
         
             res.on('end', () => {
                 try {
-                    resolve(JSON.parse(resultado))
+                    resolve(JSON.parse(resultado)) //Após a leitura de todo o JSON, chama o resolve
                 } catch (e) {
-                    reject(e)
+                    reject(e) // Chamado caso dê erro
                 }
             })
         })
@@ -40,11 +41,11 @@ let nomes = []
 //         })
 // })
 
-Promise.all([getTurma('A'),getTurma('B'),getTurma('C')])
-.then(turmas => [].concat(...turmas))
-.then(alunos => alunos.map(aluno => aluno.nome))
-.then(nomes => console.log(nomes))
-.catch(e => console.log("Deu ruim! ",e.message))
+Promise.all([getTurma('A'),getTurma('B'),getTurma('C')]) //Fica esperando a solução das Promises
+.then(turmas => [].concat(...turmas)) //Cria um único array com os três arrays recebidos
+.then(alunos => alunos.map(aluno => aluno.nome)) // Filtra só o nome dos alunos
+.then(nomes => console.log(nomes)) //Imprime o nome de todos
+.catch(e => console.log("Deu ruim! ",e.message)) // Caso dê erro, cairá nesta opção
 
 //.then(x => console.log(x))
 //getTurma('D').catch(e => console.log(e.message))

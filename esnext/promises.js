@@ -12,8 +12,8 @@ function falarDepoisDe(segundos, frase) { //tempo e a frase a ser usada
     })
 }
 
-falarDepoisDe(3,"Que legal!") //chama a função
-// Then é chamado quando a promise conclui o 'resolve', pegando o atributo passado
+falarDepoisDe(3,"Que legal!") //chama a função 
+// Then é chamado quando a promise conclui o 'resolve', pegando o atributo passado como atributo
 .then(frase => frase.concat('?!?!?!')) 
 .then(frase2 =>  frase2.concat('?!?!?!')) // O 'then' passa o resultado para o próximo 'then'
 .then(frase3 => console.log(frase3))
