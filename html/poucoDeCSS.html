@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="poucoDeCSS.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> Um pouco de CSS </title>
+        <style>
+
+            /* Mudando estilo de uma tag do html*/
+            h1 {
+                font-size: 20px;
+            }
+            /* Mudando o estilo de uma classe. Utiliza o '.' antes do nome*/
+            .fundoVermelho {
+                /* display: none;*/
+                background-color: #cc0000; 
+                /* background-color: : #f00; Pode ser com 3 ou 6 'números hexa*/ 
+            }
+            
+            .negrito {
+                font-weight: : bold;
+            }
+            
+
+        </style>
+    </head>
+    <body>
+        <h1>CSS</h1>
+        <!-- Colocando ID em um componente -->
+        <span id="textoPrincipal">Texto</span><br>
+        
+        <!-- Colocando style diretamente em um componente -->
+        <span style="display: none;">Texto</span><br>
+        
+        <!-- Colocando classes em um componente -->
+        <span class="fundoVermelho negrito">Texto 2</span><br>
+        
+        <!-- Colocando classe e criando um atributo (wm-atrib) em um componente -->
+        <span class="fundoVermelho" wm-atrib>Texto 3</span>
+        
+        <!-- 
+        Usado no browser para localizar uma classe
+        
+        document.querySelectorAll('.fundoVermelho') -> Todos elementos com esta classe
+        document.querySelector('[wm-atrib]') -> Todos atributos. fica entre '[]'
+        document.querySelector('.fundoVermelho') -> Ao contrário do 'All', retorna somente o primeiro encontrado
+        document.querySelector('#textoPrincipal')  -> Encontra o elemento pelo 'id'
+        -->  
+    
+    </body>
+</html>

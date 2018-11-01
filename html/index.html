@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Exercícios Html</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   </head>
+<body>
+    
+    <!-- 
+    Foi instalado o pacote http-server. 'sudo npm i -g http-server'
+    Para acionar o servidor deve digitar no terminal 'http-server .'
+    -->
+    <header>
+            <h1>Exercícios Html</h1>
+    </header>
+    <nav>
+            <!-- Alterada para criação de uma tag própria
+            <a href="exercicios/teste.html"> 00 - teste </a>
+            <a href="exercicios/temp.html"> Temporária </a> -->
+            
+            <!-- criando uma tag para personalizar no javascript -->
+            <a href wm-nav="exercicios/teste.html"> 00 - teste </a>
+            <a href wm-nav="exercicios/temp.html"> Temporária </a>
+    
+        </nav>
+    <section id="conteudo"></section>
+    <footer>
+        <br>
+        Curso de Web moderno
+    </footer>
+    <script>
+        document.querySelectorAll('[wm-nav]').forEach(link => {
+        //document.querySelectorAll('a').forEach(link => {    // usada no 'a href'
+            
+            // buscando a section com id "conteudo"
+            const conteudo = document.getElementById('conteudo')
+            // ação ao clicar no link, capturando um evento 'e'
+            link.onclick = function(e) {
+                e.preventDefault() // Previne que a navegação ocorra
+               
+                //fetch usado para tags personalizadas e usando requisição AJAX
+                fetch(link.getAttribute('wm-nav'))
+               
+                // fetch abaixo usado quando era a tag 'a href'.       
+                //fetch(link.href) // Gera uma promise de clicar no link
+               
+                .then(resp => resp.text()) // Pega o texto da resposta
+                .then(html => conteudo.innerHTML = html) //Adiciona no texto da section 'conteudo'
+            }
+        })
+    </script>
+</body>
+</html>
