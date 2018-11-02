@@ -1,0 +1,146 @@
+<h1>Projeto</h1>
+<ul class="tree">
+    <li >
+        <a href id="1">backend</a>
+        <ul id='4'>
+            <li>
+                <a href id="1.1">app</a>
+                <ul>
+                    <li  id="1.1.1">produtos.js</li>
+                    <li  id="1.1.2">usuario.js</li>
+                    <li  id="1.1.3">venda.js</li>
+                </ul>
+            </li>
+            <li class="tree">
+                <a href id="1.2">config</a>
+                <ul class="tree">
+                    <li id="1.2.1">banco.js</li>
+                    <li id="1.2.2">rotas.js</li>
+                    <li id="1.2.3">servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li class="tree">
+        <a href="" id="2">frontend</a>
+        <ul id="5" class="tree">
+            <li class="tree">
+                <a href id="2.1">public</a>
+                <ul class="tree">
+                    <li id="2.1.1">app.css</li>
+                    <li id="2.1.2">app.js</li>
+                    <li id="2.1.3">index.html</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+<script>
+
+        const ul1 = document.getElementById('4')
+        const ul2 = document.getElementById('5')
+
+    const backend = document.getElementById('1')
+    const app = document.getElementById('1.1')
+    const produto = document.getElementById('1.1.1')
+    const usuario = document.getElementById('1.1.2')
+    const venda = document.getElementById('1.1.3')
+    const config = document.getElementById('1.2')
+    const banco = document.getElementById('1.2.1')
+    const rotas = document.getElementById('1.2.2')
+    const servidor = document.getElementById('1.2.3')
+    const frontend = document.getElementById('2')
+    const public = document.getElementById('2.1')
+    const appcss = document.getElementById('2.1.1')
+    const appjs = document.getElementById('2.1.2')
+    const indexhtml = document.getElementById('2.1.3')
+
+
+
+    backend.onclick = function (e) {
+        if (app.style.display == "none") {
+            e.preventDefault()
+            app.style.display = ""
+            produto.style.display = ""
+            usuario.style.display = ""
+            venda.style.display = ""
+            config.style.display = ""
+            banco.style.display = ""
+            rotas.style.display = ""
+            servidor.style.display = ""
+            ul1.style.display = ""
+            } else {
+            e.preventDefault()
+            app.style.display = "none"
+            produto.style.display = "none"
+            usuario.style.display = "none"
+            venda.style.display = "none"
+            config.style.display = "none"
+            banco.style.display = "none"
+            rotas.style.display = "none"
+            servidor.style.display = "none"
+            ul1.style.display = "none"
+            }
+    }
+
+    app.onclick = function (e) {
+        if (produto.style.display == "none") {
+            e.preventDefault()
+            produto.style.display = ""
+            usuario.style.display = ""
+            venda.style.display = ""
+        } else {
+            e.preventDefault()
+            produto.style.display = "none"
+            usuario.style.display = "none"
+            venda.style.display = "none"
+        }
+    }
+    config.onclick = function (e) {
+        if (banco.style.display == "none") {
+            e.preventDefault()
+            banco.style.display = ""
+            rotas.style.display = ""
+            servidor.style.display = ""
+        } else {
+            e.preventDefault()
+            banco.style.display = "none"
+            rotas.style.display = "none"
+            servidor.style.display = "none"
+        }
+    }
+    frontend.onclick = function (e) {
+        if (public.style.display == "none") {
+            e.preventDefault()
+            public.style.display = ""
+            appcss.style.display = ""
+            appjs.style.display = ""
+            indexhtml.style.display = ""
+            ul2.style.display = ""
+        
+        } else {
+            e.preventDefault()
+            public.style.display = "none"
+            appcss.style.display = "none"
+            appjs.style.display = "none"
+            indexhtml.style.display = "none"
+            ul2.style.display = "none"
+        
+        }
+    }
+    public.onclick = function (e) {
+        if (appcss.style.display == "none") {
+            e.preventDefault()
+            appcss.style.display = ""
+            appjs.style.display = ""
+            indexhtml.style.display = ""
+        } else {
+            e.preventDefault()
+            appcss.style.display = "none"
+            appjs.style.display = "none"
+            indexhtml.style.display = "none"
+        }
+    }
+</script>

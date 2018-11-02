@@ -1,0 +1,52 @@
+<h1 wm-folder>Projeto</h1>
+<ul class="tree">
+    <li >
+        <span wm-folder>backend</span>
+        <ul>
+            <li>
+                <span wm-folder>app</span>
+                <ul>
+                    <li  id="1.1.1">produtos.js</li>
+                    <li  id="1.1.2">usuario.js</li>
+                    <li  id="1.1.3">venda.js</li>
+                </ul>
+            </li>
+            <li class="tree">
+                <span wm-folder>config</span>
+                <ul class="tree">
+                    <li id="1.2.1">banco.js</li>
+                    <li id="1.2.2">rotas.js</li>
+                    <li id="1.2.3">servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li class="tree">
+        <span wm-folder>frontend</span>
+        <ul class="tree">
+            <li class="tree">
+                <span wm-folder>public</span>
+                <ul class="tree">
+                    <li id="2.1.1">app.css</li>
+                    <li id="2.1.2">app.js</li>
+                    <li id="2.1.3">index.html</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+<script>
+    //Pegando todos que estão marcados com 'wm-folder' e rodando a função para cada um (forEach)
+    document.querySelectorAll('[wm-folder').forEach(folder => {
+        folder.onclick = function(e) {
+            //nextElementSibling serve para pegar o próximo elemento após o capturado pela 'wm-folder'
+            const ul = folder.nextElementSibling
+            // Faz uma referência ao display do style da variável 'ul'
+            const d = ul.style.display
+            // Verifica se está visível e altera para invisível e vice-versa
+            ul.style.display = d === 'none' ? 'block' : 'none'
+        }
+    })
+</script>
