@@ -1,0 +1,53 @@
+<!-- As tabelas possuem um estrutura de header body e foot, conforme abaixo -->
+<!-- foram aplicados estilos para melhor renderização da tabela -->
+<table>
+    <caption>Produtos</caption>
+    <Thead>
+        <tr>
+            <th>Produtos</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Total</th>
+        </tr>
+    </Thead>
+    <tbody>
+        <tr>
+            <td>iPad</td>
+            <td>3289,00</td>
+            <td>5</td>
+            <td>16445,00</td>
+        </tr>
+        <tr>
+            <td>Samsung</td>
+            <td>2649,00</td>
+            <td>8</td>
+            <td>21192,00</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3">Total</td>
+            <td>37637,00</td>
+        </tr>
+    </tfoot>
+</table>
+
+<style>
+    table {
+        border-collapse: collapse; /*tira a borda da tabela */
+    }
+    th, td {
+        padding: 10px; /*Mais espaço entre os itens*/
+    }
+    thead tr {
+        border-bottom: solid 3px #444; /* Borda abaixo do cabeçalho */
+    }
+    tbody tr:hover {
+        background-color: #dedede;
+    }
+    tfoot {
+        background-color: #444;
+        color: #fff;
+        font-weight: bold;
+    }
+</style>

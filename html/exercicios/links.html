@@ -1,0 +1,24 @@
+<h1>Links</h1>
+
+<!-- URL absoluta -->
+<a id="inicio" href="https://www.google.com.br">Google 1</a><br>
+<!-- O _blank abre em outra janela -->
+<a href="https://www.google.com.br" target="_blank">Google 2</a><br><br>
+
+<!-- URL Relativa -->
+<a href="index.html"> Voltar 1 </a><br> <!-- Dá certo só se for acessado na página principal, incluso-->
+<a href="/index.html"> Voltar 2 </a><br> <!-- a '/' volta para a raiz da aplicação -->
+<a href="../index.html"> Voltar 3 </a><br> <!-- Retorna uma pasta e tenta encontrar o arquivo -->
+
+<!-- Email-->
+<a href="mailto:email@servidor.com.br">Email</a><br>
+
+<!-- Criando uma div com id para buscar via link -->
+<div id="noticia" style="position: absolute; top: 2000px">
+    <h1>Notícia Buemba!</h1>
+    <p>Não era nada.... =)</p>
+    <!-- Link para o início, id da linha 4-->
+    <a href="#inicio"> Voltar para o início</a>
+</div>
+<!-- Link para a div criada -->
+<a href="#noticia">Ir para Notícia</a>
