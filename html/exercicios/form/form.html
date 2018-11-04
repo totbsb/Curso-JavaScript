@@ -1,7 +1,71 @@
 <!-- Será feito numa pasta separada para testar o formulário -->
+<!-- Na segunda aula foi alterado o action do form, colocando diretamente no botão de enviar-->
+<!-- Com isso, podemos enviar para diferentes actions-->
+
 <h1> Formulários</h1>
 
-<form action="http://localhost:3003/usuarios" method="POST">
-<input type="text" name="nome">
-<button>Incluir</button>
+<!-- Todos botões dentro de um form geram submit. Coloquei os códigos abaixo para ter mais de um botão no form-->
+<!-- <form id="form" action="http://localhost:3003/usuarios" method="POST" onsubmit="return false;"> --> <!-- Inclusão do onsubmit="return false;" e o id-->
+
+<form method="POST">
+    <!-- o type define o tipo de campo a ser usado-->
+<input type="hidden" name="id" value="3"> <!-- Exemplo de elemento escondido, com um valor atribuído-->
+
+<!-- importante, o 'name' vai ser usado no server.js para identificar a chave e o value como valor, na maioria dos casos -->
+Nome: <input type="text" name="nome"> 
+Senha: <input type="password" name="senha">
+Texto livre: <textarea name="bio" cols="30" rows="10"></textarea>
+Perfil: <div>
+    <input type="radio" name="tipo" value="admin">Admin
+    <input type="radio" name="tipo" value="regular">Regular
+    <input type="radio" name="tipo" value="professor">Professor
+</div>
+<div>
+    <input type="checkbox" name="ativo"> Ativo
+</div>
+Estado: <select name="estado">
+    <option value=""> Selecione </option>
+    <option value="ce"> Ceará </option>
+    <option value="ba"> Bahia </option>
+    <option value="sp"> São Paulo </option>
+    <option value="df" > Distrito Federal </option>
+</select>
+Interesses: <select name="interesses" multiple size="5">
+        <option value="js">Javascript</option>
+        <option value="java">Java</option>
+        <option value="php">PHP</option>
+        <option value="python">Python</option>
+        <option value="go">Go</option>
+        <option value="c">C</option>
+</select>
+
+<!-- <button onclick="submit()">Incluir</button> --> <!-- chamando a função abaixo para criar o submit-->
+
+<!-- Podemos incluir as actions diretamente no botão, mudando inclusive a forma de envio (GET, POST, PUT, etc...) -->
+<button formaction="http://localhost:3003/usuarios"> Incluir </button>
+<button formaction="http://localhost:3003/usuarios/3"> Alterar </button>
+<!-- <button onclick="sem_funcao()">Sem função</button> --> <!-- Botão sem função de submit--> 
 </form>
+
+<style>
+input,
+textarea,
+select {
+    display: block;
+    margin-bottom: 10px; 
+}
+
+input[type=radio],
+input[type=checkbox] {
+    display: inline;
+}
+
+</style>
+<script>
+    function sem_funcao() {
+      console.log('sem submit');
+    }
+    function submit() {
+    document.getElementById('form').submit();
+  }
+</script>

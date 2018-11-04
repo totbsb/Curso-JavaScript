@@ -1,0 +1,106 @@
+<!-- Criação de um slider -->
+<div wm-slider>
+        <p>
+            <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" alt="Muro da Cidade" width="513" height="342" title="Muro da Cidade por Tarso Bessa">
+        </p>
+        <p class="circular">
+            <img src="http://files.cod3r.com.br/curso-web/imagem2.gif" alt="Intro Cod3r" height="342">
+        </p>
+        <p>
+            <img src="http://files.cod3r.com.br/curso-web/imagem3.png" alt="Rio de Janeiro" height="342">
+        </p>
+    
+        <p class="texto">
+            <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" alt="Avatar" height="50" align="left">
+            Texto sfsff faf sdf df sf dsf sdf sdf sf sdf sdf dsf sdff
+            adf f dfsd fsdfsdfsfs ds fsdf sf sdf dsfsd fsd fsd fsd fsd f
+            adfsd fsfsafdsfs afdfsdf sdfvads dfsfsdfsdfdsf dssdfd dfsfsdf
+            Texto sfsff faf sdf df sf dsf sdf sdf sf sdf sdf dsf sdff
+            adf f dfsd fsdfsdfsfs ds fsdf sf sdf dsfsd fsd fsd fsd fsd f
+            adfsd fsfsafdsfs afdfsdf sdfvads dfsfsdfsdfdsf dssdfd dfsfsdf
+    
+        </p>
+    
+        <p class="cidade"></p>
+    
+        <p>
+            <picture>
+                <source media="(min-width: 650px)" srcset="http://files.cod3r.com.br/curso-web/logo-larga.png">
+                <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="Logo">
+            </picture>
+        </p>
+    </div>
+    <Style>
+        p {
+            position: absolute;
+            display: none; 
+        }
+    
+        .circular {
+            width: 513px;
+            background-color: #444;
+        }
+    
+        .texto {
+            width: 400px;
+        }
+    
+        .texto img {
+            margin-right: 10px;
+        }
+    
+        .cidade {
+            width: 513px;
+            height: 342px;
+            background-image: url('http://files.cod3r.com.br/curso-web/imagem4.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+    </Style>
+    
+    <script>    
+        function mover(elem, inicio, fim, passo, callback) {
+            const novoInicio = inicio - passo
+            if(novoInicio >= fim) {
+                elem.style.left = novoInicio +'px'
+                setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7)
+            } else {
+                callback()
+            }
+        }
+       
+        // const p = document.querySelector('[wm-slider] > p')
+        // p.style.display = 'block'
+        // mover(p, 1500, -520, 5, () => {
+        //     console.log('Terminou!!!')
+        // })
+    
+        function slider() {
+            const elementos = document.querySelectorAll('[wm-slider] > p') //Todos <p> dentro da tag wm-slider
+                console.log(elementos)
+            const slides = Array.from(elementos) // Forma de transformar um NodeList em um Array
+            exibirSlide(slides,slides[0]) //Chama a função que mostra a imagem na tela captura a posição, além de startar a função 'mover'
+        }
+    
+        function exibirSlide(slides,slide) { //Recebe o array de slides e o primeiro slide (slides[0])
+            slide.style.display = 'block' //torna o slide visível já que todos começam display: none pelo CSS atribuído
+    
+            const inicio = innerWidth //innerWidth é a largura da tela atual, mudando conforme a mudança do tamanho desta
+            const fim = -slide.clientWidth //clientWidth é onde termina a área do cliente, no caso a largura da tag <p>
+    
+            slide.style.left = `${inicio}px` //Define o início
+    
+            mover(slide, inicio, fim, 5, () => { //Função para fazer o movimento gradativo da imagem
+                slide.style.display = 'none' //Callback chamada no final, ocultando a imagem
+                exibirSlide(slides, getProximo(slides,slide)) //Efeito recursivo, chamando um novo slide conforme a função getProximo
+            }) 
+        }
+    
+        function getProximo(lista, atual) { //Recebe o array de elementos e o slide atual
+            const i = lista.indexOf(atual) + 1 //Incrementa o valor e passa para uma variável
+            return i < lista.length ? lista[i] : lista[0] //Caso o novo valor seja maior que o array, retorna para o primeiro slide
+        }
+    
+        slider() //Chama a primeira função para capturar as imagens e colocar em um array. Começa aqui
+    </script>

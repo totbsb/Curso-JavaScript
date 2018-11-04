@@ -1,0 +1,54 @@
+  <!-- Inclusão de vídeo. Tag do html5-->
+  <!-- o 'id' é importante para associar aos botões e ao javaScript-->
+  <video id="meuVideo" width="800" height="450" controls autoplay controlsList="nodownload">
+      <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+        Seu browser não suporta a tag de vídeo.
+  </video>
+
+  <!-- Local onde vai correr o progresso-->
+  <div wm-progresso="meuVideo" class="progresso">
+      <div></div> <!-- barra interna, que aumenta conforme o progresso do video-->
+  </div>
+
+  <div>
+        <button wm-play="meuVideo">Play</button> <!-- atributo com valores -->
+        <button wm-pause="meuVideo">Pause</button> <!-- atributo com valores -->
+  </div>
+
+  <style>
+        .progresso { /* borda exterior da barra de progresso */
+          height: 20px;
+          width: 740px;
+          border: solid 1px #444;
+          margin: 30px;
+        }
+
+        .progresso > div { /* Interior da barra de progresso */
+            background-color: red;
+            color: white;
+            height: 100%;
+            text-align: right;
+            font-size: 14px;
+            width: 0%;
+        }
+  </style>
+
+  <script>
+    document.getElementById('meuVideo').play() //Play no Chrome, só funciona automático se tiver 'muted'
+    function configurarVideo(id) { //recebe o id do video
+        const video = document.getElementById(id) //encontra o video na DOM
+        video.oncontextmenu = () => false //desabilita o apertar botão direito do mouse
+
+        document.querySelector(`[wm-play=${id}]`).onclick = e => video.play() //associa ao botão de play
+        document.querySelector(`[wm-pause=${id}]`).onclick = e => video.pause() //associa ao botão de pause
+
+        setInterval(() => { //frequencia que vai carregar a barra de progresso
+            const percentual = (video.currentTime / video.duration) * 100 // Atual dividido pelo total, achando o %
+            const valorDiv = document.querySelector(`[wm-progresso=${id}] > div`) // Buscando a div interna do progresso
+            valorDiv.style.width = `${percentual}%` //Alterando a largura do progresso
+            valorDiv.innerHTML = `${percentual.toFixed(1)}%` //Inserindo o valor do progresso
+        }, 500) //intervalo entre a atualização
+}
+
+configurarVideo('meuVideo') //Inicia a função acima
+  </script>

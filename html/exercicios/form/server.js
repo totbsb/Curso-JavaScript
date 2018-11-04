@@ -11,8 +11,17 @@ app.use(bodyParser.urlencoded({extended: true})) //Colocar os valores no body da
 
 //utiliza o método POST e aguarda a requisição na url 'http://localhost:3003/usuarios'
 app.post('/usuarios', (req, resp) => { 
+//app.get('/usuarios', (req, resp) => { //os dados vão pela url, e o objeto muda de req.body para req.query    
     console.log(req.body)
+    //console.log(req.query) //Utilizado com o método GET
     resp.send('<h1>Parabéns</h1>') //Retorna o texto após conclusão da requisição 
+})
+
+//utiliza o método POST e aguarda a requisição na url 'http://localhost:3003/usuarios/:id'
+app.post('/usuarios/:id', (req, resp) => { 
+    console.log(req.params.id)
+    console.log(req.body)
+    resp.send(`<h1>Parabéns ${req.body.nome}! Alterado com sucesso!</h1>`) //Retorna o texto após conclusão da requisição 
 })
 
 app.listen(3003) //Fica escutando a porta especificada
