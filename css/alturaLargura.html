@@ -5,9 +5,17 @@
     <meta charset="UTF-8">
     <title>Altura e Largura</title>
     <style>
+        html {
+            /* Necessário para funcionar altura relativa do span, div */
+            height: 100%;
+        }
         body {
+            /* Necessário para funcionar altura relativa do span, div */
+            height: 100%;
+
             font-size: 40px;
             background-color: coral;
+            margin: 0
         }
 
         div {
@@ -16,6 +24,14 @@
 
         span {
             background-color: dodgerblue;
+        }
+
+        span, div {
+            width: 50%;
+            height: 250px;
+            /* Só funciona o 50% se incluir style nas tags body e html */
+            height: 50%;
+            display: block; /* Para funcionar com o span o width e height */
         }
     </style>
 </head>

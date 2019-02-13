@@ -5,7 +5,33 @@
     <meta charset="UTF-8">
     <title>Display</title>
     <style>
-        /* ... */
+        body {
+            font-size: 40px;
+            color: white;
+            background-color: coral;
+        }
+
+        ul { padding: 0;}
+        div { background-color: seagreen;}
+        span { background-color: dodgerblue;}
+        li { background-color: purple;}
+
+        div, span, li {
+            width: 50%; /* Não considerado no display inline */
+            width: 200px; /* Não considerado no display inline */
+            height: 80px; /* Não considerado no display inline */
+            padding-top: 30px;
+            text-align: center;
+            
+            /* display block dispõe um elemento em cada linha, aplicando os estilos */
+            /* aplica inclusive ao span, antes não afetado pelo width e pelo height */
+            /* display: block; */
+
+            /* dispõe um do lado do outro, na mesma linha. width e height não funcionam neste display */
+            /* display: inline; */
+            /* dispõe um do lado do outro, na mesma linha. width e height funcionam neste display */
+            display:inline-block;
+        }
     </style>
 </head>
 
