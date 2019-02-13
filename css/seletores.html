@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- Na aula 193 foi falado os tipos e as combinações de seletores do CSS -->
+<!-- Verificar este site para todos https://www.w3schools.com/cssref/css_selectors.asp -->
 <html>
 
 <head>
@@ -6,7 +8,85 @@
     <title>CSS Selectors</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        /* Todos os elementos da página */
+        /*  * {
+            color: yellow;
+            background-color: #888;
+        } */
+        /* Todos os elementos com a classe 'tag' */
+        /* .tag {
+            color: yellow;
+            background-color: #888;
+        } */
+        /* Todos os elementos com id #aprovado */
+        /* #aprovados {
+            color: yellow;
+            background-color: #888;
+        } */
+        /* Elementos 'div' filho e imediatamente após ao id #aninhado. Não muda o #aninhado */
+        /* #aninhado > div {
+            color: yellow;
+            background-color: #888;
+        } */
+        /* Elementos 'section' filhos de elementos com id #aninhado */
+        /* #aninhado section {
+            color: yellow;
+            background-color: #888;
+        } */
+        /* Elemento 'ul' sendo irmão direto (imediatamente após) do elemento 'p' */
+        /* p + ul {
+            color: yellow;
+            background-color: #888;
+        } */
+        /* Elementos 'ol' sendo irmãos do elemento 'p' */
+        /* p ~ ol {
+            color: yellow;
+            background-color: #888;
+        } */
+        /* Elementos com o atributo [feira] */
+        /* [feira] {
+            color: yellow;
+            background-color: #888;
+        } */
+        /* Elementos com o atributo [feira] e valor='casa' */
+        /* [feira=casa] {
+            color: yellow;
+            background-color: #888;
+        } */
+        /* Elementos com o atributo [feira] e valor contendo 'escritorio' */
+        /* Se não colocar o '~' busca todas os valores. Verifica somente nomes inteiros.*/
+        /* [feira~=escritorio] {
+            color: yellow;
+            background-color: #888;
+        } */
+        /* Elementos com o atributo [feira] e valor contendo 'asa'. Similar ao 'like' do SQL */
+        /* [feira*=asa] {
+            color: yellow;
+            background-color: #888;
+        } */
+        /* Primeiro filho de qualquer elemento que seja span */
+        /* No CSS a numeração começa com '1', diferente de outras programações */
+        /* span:nth-child(1) {
+            color: yellow;
+            background-color: #888;
+        } */
+        /* Todos os filhos ímpares de uma section */
+        /* section > :nth-child(odd) {
+            color: yellow;
+            background-color: #888;
+        } */
+        /* Todos os filhos pares de uma section */
+        /* section > :nth-child(even) {
+            color: yellow;
+            background-color: #888;
+        } */
+        /* Segundo elemento do tipo span dentro de uma section*/
+        section > span:nth-of-type(2) {
+            color: yellow;
+            background-color: #888;
+        }
+
+
     </style>
 </head>
 
@@ -29,7 +109,7 @@
             </ol>
             <div id='aninhado' class='tag'>
                 <div class="tag">
-                    <section class='tag'>
+                    <section class='tag nolabel'>
                         <span class='tag'>1</span>
                         <p class='tag'>2</p>
                         <span class='tag'>3</span>

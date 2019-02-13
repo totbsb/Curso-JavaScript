@@ -6,6 +6,32 @@
     <title>Especificidade CSS</title>
     <style>
         /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
+        
+        /* Qual a ordem, em linhas gerais...
+         1. Regra com !important;
+         2. Seletores mais específicos;
+         3. Última regra processada, em caso de empate. 
+         */
+
+         p {
+             background-color:  #aaa;
+         }
+         
+         .observacao {
+             background-color: #5F5;
+             border: dashed 5px;
+             padding: 200px; 
+             /* sobrepõe o padding de 'p.observacao' por ter o '!important' */
+             /* padding: 200px !important; */ 
+             font-size: 40px;
+         }
+         
+         /* Tem prioridade por ser um seletor mais específico, entrando na regra '2' acima */
+         p.observacao {
+             padding: 2px;
+             background: linear-gradient(to right, red, yellow);
+         }
+
     </style>
 </head>
 
