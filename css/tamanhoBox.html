@@ -4,8 +4,24 @@
     <meta charset="UTF-8">
     <title>Tamanho Box</title>
     <style>
+        * {
+            /* Esta opção considera a soma do conteúdo, da borda e do padding para ficar o valor do width*/
+            box-sizing: border-box;
+        }
+
         body {
             font-size: 45px;
+        }
+
+        div {
+            background-color: deepskyblue;
+            width: 100%;
+            height: 300px;
+            /* com o padding e border, a div passa do tamanho width 100% da tela */
+            padding: 100px;
+            border: solid 20px;
+            /* margin: 13px; Não considerado no border-box  */
+            /* box-sizing: content-box; */
         }
     </style>
 </head>

@@ -5,13 +5,34 @@
     <meta charset="UTF-8">
     <title>Unidades #01</title>
     <style>
-        /* ... */
+        .unidades-absolutas {
+            position: absolute;
+            font-size: 40px;
+            padding: 20px;
+            border: solid 5px #222;
+            margin: 30px; 
+            width: 4cm; /* Pouco usado cm */
+            height: 20mm; /* Pouco usado mm */
+            top: 15px; /* distância do limite da viewport, tamanho da tela usado para o site */
+            left: 20px; /* distância do limite da viewport */
+        }
+        .unidades-relativas {
+            position: absolute;
+            font-size: 4em; /* 4x o valor padrão do browser */  
+            padding: 5%;
+            border: solid 1vw #222;
+            margin: .8%;
+            width: 20vw; /* (vw = 1/100 da largura total) */
+            height: 15vh; /* (vh = 1/100 da altura total) */
+            bottom: 5%; /* distância do limite da viewport */
+            right: 5%; /* distância do limite da viewport */
+        }
     </style>
 </head>
 
 <body>
-    <div class="unidades-absolutas">Opa!</div>
-    <div class="unidades-relativas">Epa!</div>
+    <div class="unidades-absolutas">Teste</div>
+    <div class="unidades-relativas">Teste</div>
 </body>
 
 </html>

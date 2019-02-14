@@ -16,6 +16,54 @@
             flex-direction: column;
             align-items: center;
         }
+
+        p {
+            font-size: 1em; /* 1x o tamanho padrão da tag anterior */
+            font-size: 100%;
+            font-size: 16px;
+            font-size: 12pt;
+
+            /* unidades absolutas */
+            font-size: 100px; /* tamanho do pixel é relativo na tela */
+            font-size: 72pt; /* pontos */
+            font-size: 1in; /* polegadas */
+
+            /* unidades relativas */
+            font-size: 2.2em; /* 2.2x o tamanho padrão da tag anterior */
+            font-size: 2.2rem; /* 1x o tamanho padrão da tag raiz, ou seja, <html> */
+            font-size: 50vh; /* 50/100 da altura */
+            font-size: 50wh; /* 50/100 da largura */
+
+            font-family: monospace; /* Todas as letras ocupam o mesmo espaço */
+            font-family: Georgia, serif; /* Letras 'serifadas' possuem uma linha de acabamento */ 
+            font-family: 'Indie Flower', cursive; /* Fontes cursivas */
+
+            font-weight: 900; /* largura da fonte, tipo negrito */
+            font-style: italic;
+            text-decoration: overline underline line-through; /* linha cruzando o texto */
+            word-spacing: 10px; /* Espaço entre palavras */
+            letter-spacing:  20px; /* Espaço entre letras */
+            line-height: 2.5em; /* Espaço entre linhas */
+            text-align: center;
+            display: none;
+        }
+        
+        .botao {
+            font-size: 20px;
+            text-decoration: none; /* Tirar a linha do hyperlink */
+            padding: 10px 30px;
+            border-radius: 25px;
+        }
+
+        .destaque {
+            color: #fff;
+            background: tomato;
+            box-shadow: 2px 2px 1px 1px #000;
+        }
+
+        .destaque:active {
+            box-shadow: none; /* Impressão que o botão foi apertado */
+        }
     </style>
 </head>
 

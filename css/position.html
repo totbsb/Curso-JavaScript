@@ -5,7 +5,77 @@
     <meta charset="UTF-8">
     <title>Position</title>
     <style>
-        /* ... */
+       div {
+           font-size: 60px;
+           padding: 30px;
+           border: solid 5px #222;
+           color: white;
+       }
+       
+       .static {
+           top: 100px; /* Não faz efeito por ser static por padrão */
+           left: 100px; /* Não faz efeito por ser static por padrão */
+           background-color: steelblue;
+       }
+
+       .fixed {
+           /* Fica fixo na tela, como se fosse um modal */
+           position: fixed;
+           bottom: 30px;
+           right: 0px;
+           background-color: tomato;
+       }
+       
+       /* Criado por Thiago para teste */
+       /* .fixed:hover {
+           background-color: #0000;
+           color: #0000;
+           border: none;
+       } */
+
+       .relative1 {
+           /* Leva em consideração o elemento anterior */
+           position: relative;
+           left: 50px;
+           top: 5px;
+           background-color: seagreen;
+       }
+       
+       .absolute1 {
+           /* Se posiciona de forma absoluta, por cima de todos os elementos */
+           position: absolute;
+           left: 350px;
+           top: 120px;
+           background-color: blue;
+        }
+
+        .relative2 {
+            position: relative;
+            left: 250px;
+            top: 2000px;
+            width: 200px;
+            height: 200px;
+            background-color: slategray;
+        }
+
+        .absolute2 {
+            /* Mesmo sendo absoluto, se posiciona de acordo com a tag pai */
+            /* se na classe .relative2 não fosse relative, pegaria a posição da página */
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: orange;
+        }
+
+        .sticky {
+            /* De acordo com a rolagem dos elementos, ele fica fixo na tela */
+            position: sticky;
+            background-color: #777;
+            bottom: 0px;
+        }
+
     </style>
 </head>
 

@@ -5,16 +5,20 @@
     <meta charset="UTF-8">
     <title>Float</title>
     <style>
+        /* Não utilizado atualmente, por ter opções como CSS grid */
         body {
             background-color: #222;
         }
 
         .c1 {
             background-color: red;
+            float: right;
         }
 
         .c2 {
             background-color: green;
+            /* a opção clear apaga o efeito do float e empurra os demais para baixo */
+            clear: right; /* Pode ser both */
         }
         
         .c3 {
@@ -23,6 +27,13 @@
 
         .c4 {
             background-color: orange;
+        }
+
+        div {
+
+            height: 150px;
+            width: 150px;
+            /* display: inline; */
         }
     </style>
 </head>
