@@ -6,7 +6,53 @@
     <title>Flexbox #02</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        div {
+            border: solid 5px dodgerblue;
+            font-size: 40px;
+        }
+
+        .flex-container div {
+            box-sizing: border-box;
+        }
+
+        .flex-container {
+            display: flex;
+            height: 300px;
+            width: 600px;
+        }
+
+        .flex-container div:nth-child(3) { /* Pega o terceiro filho da classe */
+            background-color: indianred;
+            order: 1; /* Ordem maiores ficam por último */
+            order: 0; /* Mantem a ordem natural */
+            order: -1; /* Ordem menores ficam em primeiro */
+            align-self: center; /* Alinha central de forma vertical */
+            align-self: flex-end;
+            align-self: flex-start;
+            align-self: stretch;
+        }
+
+        .flex-container div {
+            width: 100px;
+            /* Colocar 'peso' para crescimento dos filhos até o final do box */
+            flex-grow: 0;
+            flex-grow: 1;
+        }
+
+        .flex-container div:nth-child(1) {
+            flex-grow: 2;
+        }
+
+        .flex-container {
+            width: 300px;
+            /* Colocar 'peso' para encolhimento dos filhos até o final do box */
+            flex-shrink: 1;
+        }
+        
+        .flex-container div:nth-child(1) {
+            flex-shrink: 5;
+        }
+
     </style>
 </head>
 

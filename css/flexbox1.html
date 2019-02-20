@@ -6,7 +6,57 @@
     <title>Flexbox #01</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        div {
+            border: solid 5px dodgerblue;
+            font-size: 40px;
+            margin: 5px;
+        }
+
+        .big {
+            font-size: 1.5em;
+        }
+
+        .flex-container {
+            /* o display flex é usado de maneira unidirecional, diferente do grid que são dois eixos */
+            display: flex;
+            /* o eixo (flex-direction) default é linha (row) */
+            flex-direction: column;
+            flex-direction: column-reverse;
+            flex-direction: row-reverse;
+            flex-direction: row;
+            width: 50%;  /* gera overflow como padrão. É evitado usando o flex-wrap */
+            flex-wrap: wrap; /* Quebra a linha, respeitando a largura */ 
+            flex-wrap: wrap-reverse; /* Quebra a linha, invertendo as linhas */
+            height: 200px;
+            /* flex-direction com flex-wrap -> flex-flow */
+            /* É usado os dois atributos das funções anteriores */
+            flex-flow: row wrap; 
+            /* flex-flow: column-reverse wrap; */
+            flex-direction: row-reverse;
+            
+            /* Alinhamento no Main Axis - Eixo principal */
+            justify-content: flex-start; 
+            justify-content: flex-end;
+            justify-content: center;
+            justify-content: space-around;
+            justify-content: space-between;
+
+            /* Alinhamento no Cross Axis - Eixo secundário */
+            align-items: stretch; /* Valor padrão, esticando os elementos */
+            align-items: baseline; /* Alinhamento pela base de cada item */
+            align-items: flex-start;
+            align-items: flex-end;
+            align-items: center;
+
+            /* Alinhamento para mais de uma linha */
+            align-content: flex-start;
+            align-content: flex-end;
+            align-content: center;
+            align-content: space-around;
+            align-content: space-between;
+
+        }
+        
     </style>
 </head>
 
